@@ -1,5 +1,5 @@
 <script setup>
-import { provide } from 'vue';
+import { provide, ref } from 'vue';
 
     const props = defineProps({
         initialValues: {
@@ -18,16 +18,13 @@ import { provide } from 'vue';
         isSubmitting = true;
     }
 
-    function values() {
-        return  {};
-        //return props.initialValues;
-    }
+    let values = ref(props.initialValues);
 
-    function errors() {
-        return {};
-    }
+    console.log(values);
 
-    provide('values', values);
+    let errors = props.validate(values.value);
+
+    provide('values', values.value);
     provide('errors', errors);
 </script>
 

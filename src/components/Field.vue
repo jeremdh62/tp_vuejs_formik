@@ -1,5 +1,8 @@
 <script setup>
 import { inject } from 'vue';
+import Select from './Select.vue';
+import Input from './Input.vue';
+import TextArea from './TextArea.vue';
 
     const props = defineProps({
         type: {
@@ -19,12 +22,20 @@ import { inject } from 'vue';
     let values = inject('values');
     let errors = inject('errors');
 
-    console.log(values);
+    console.log(props.as);
 </script>
 
 <template>
-    <div class="field">
-        
+    <div v-if="as">
+        <div v-if="as === 'Select'" >
+            <Select :name="name" :values="values" />
+        </div>
+        <div v-if="as === 'TextArea'" >
+            <TextArea :name="name" :values="values" />
+        </div>
+    </div>
+    <div v-else>
+        <Input :type="type" :name="name" :values="values"/>
     </div>
 </template>
 
