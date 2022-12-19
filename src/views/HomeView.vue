@@ -31,7 +31,7 @@ function validate(values) {
            <Field type="password" name="password" />          
            <Field as="TextArea" name="textearea" />    
            <Field as="Select" name="select1" />  
-           <button type="submit" disabled={isSubmitting}>             
+           <button type="submit" :disabled="isSubmitting">             
               Submit
            </button>        
       </form>
