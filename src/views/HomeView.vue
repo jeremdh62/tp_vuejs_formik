@@ -22,7 +22,7 @@ function validate(values) {
       v-bind:validate="validate"
       #default="{ isSubmitting, handleSubmit, values, errors }"
     >        
-      <form @submit="handleSubmit">           
+      <form @submit.prevent="handleSubmit">           
         <h1>Values</h1>           
         {{ JSON.stringify(values) }}
            <h1>Errors</h1>           

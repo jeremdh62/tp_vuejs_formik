@@ -20,8 +20,6 @@ import { provide, ref } from 'vue';
 
     let values = ref(props.initialValues);
 
-    console.log(values);
-
     let errors = props.validate(values.value);
 
     provide('values', values);
