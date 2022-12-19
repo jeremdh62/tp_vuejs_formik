@@ -18,7 +18,7 @@ function validate(values) {
 <template>
   <main>
     <Formik  
-      v-bind:initial-values="{password: 'test', email: ''}" 
+      v-bind:initial-values="{password: 'test', email: 'test@test.com', textearea: 'Hello World', select1: [{label:'One',value:'1'},{label:'Two', value:'2'}]  }" 
       v-bind:validate="validate"
       #default="{ isSubmitting, handleSubmit, values, errors }"
     >        
@@ -28,9 +28,9 @@ function validate(values) {
            <h1>Errors</h1>           
            {{ JSON.stringify(errors) }}
            <Field type="email" name="email" />           
-           <!--<Field type="password" name="password" />          
+           <Field type="password" name="password" />          
            <Field as="TextArea" name="textearea" />    
-           <Field as="Select" name="select1" />     -->
+           <Field as="Select" name="select1" />  
            <button type="submit" disabled={isSubmitting}>             
               Submit
            </button>        

@@ -1,4 +1,6 @@
 <script setup>
+import { inject } from 'vue';
+
  const props = defineProps({
      type: {
          type: String,
@@ -7,18 +9,16 @@
      name: {
          type: String,
          required: false
-     },
-     values: {
-         type: Object,
-         required: false
      }
  })
 
- let value = props.values[props.name];
+
+ let values = inject('values');
+
 </script>
 
 <template>
-    <input :name="name" :type="type" :value="value"  />
+    <input :name="name" :type="type" v-model="values[props.name]" />
 </template>
 
 <style scoped>

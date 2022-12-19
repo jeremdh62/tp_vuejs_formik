@@ -24,7 +24,7 @@ import { provide, ref } from 'vue';
 
     let errors = props.validate(values.value);
 
-    provide('values', values.value);
+    provide('values', values);
     provide('errors', errors);
 </script>
 

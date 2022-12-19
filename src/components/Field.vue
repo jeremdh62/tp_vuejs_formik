@@ -22,7 +22,8 @@ import TextArea from './TextArea.vue';
     let values = inject('values');
     let errors = inject('errors');
 
-    console.log(props.as);
+    console.log(values.value);
+
 </script>
 
 <template>
@@ -35,7 +36,7 @@ import TextArea from './TextArea.vue';
         </div>
     </div>
     <div v-else>
-        <Input :type="type" :name="name" :values="values"/>
+        <Input :name="name" :type="type" />
     </div>
 </template>
 
