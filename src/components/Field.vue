@@ -20,7 +20,6 @@ import TextArea from './TextArea.vue';
     })
 
     let values = inject('values');
-    let errors = inject('errors');
 </script>
 
 <template>
