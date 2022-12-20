@@ -18,7 +18,7 @@ function validate(values) {
 <template>
   <main>
     <Formik  
-      v-bind:initial-values="{password: 'test', email: 'test@test.com', textearea: 'Hello World', select1: [{label:'One',value:'1'},{label:'Two', value:'2'}]  }" 
+      v-bind:initialValues="{password: 'test', email: 'test@test.com', textearea: 'Hello World', select1: [{label:'One',value:'1'},{label:'Two', value:'2'}]  }" 
       v-bind:validate="validate"
       #default="{ isSubmitting, handleSubmit, values, errors }"
     >        
