@@ -12,18 +12,22 @@ import { provide, ref } from 'vue';
         },
     })
 
-    let isSubmitting = false;
+    let isSubmitting = ref(false);
 
     function handleSubmit() {
-        isSubmitting = true;
+        isSubmitting.value = true;
+        errors = props.validate(values.value);
     }
 
     let values = ref(props.initialValues);
 
-    let errors = props.validate(values.value);
+    let errors = {};
+
+    let validate = ref(props.validate);
 
     provide('values', values);
     provide('errors', errors);
+    provide('validate', validate);
 </script>
 
 <template>
